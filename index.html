@@ -37,7 +37,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Somewhere else? Search</a></li>
+                        <li><a class="dropdown-item navSearch" href="#">Somewhere else? Search</a></li>
                         </ul>
                         </li>
                         <li class="nav-item">
@@ -45,7 +45,7 @@
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2 searchHere" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
@@ -53,8 +53,8 @@
         </nav>
 
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-            <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
-            <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+            <h1 class="display-4 fw-normal text-body-emphasis">Delhi</h1>
+            <p class="fs-5 text-body-secondary">Delhi is the capital of India and the seat of all three branches of the Government of India</p>
         </div>
     </header>
 
@@ -64,51 +64,48 @@
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm">
                         <div class="card-header py-3 cardHead">
-                            <h4 class="my-0 fw-normal">Free</h4>
+                            <h4 class="my-0 fw-normal">Temperature</h4>
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>10 users included</li>
-                                <li>2 GB of storage</li>
-                                <li>Email support</li>
-                                <li>Help center access</li>
+                                <li>Temperature<span id="temp"></span></li>
+                                <li>Min Tem<span id="min_temp"></span></li>
+                                <li>Max Tem<span id="max_temp"></span></li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-primary">Sign up for free</button>
+                            <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Sign up for free</button> -->
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm">
                         <div class="card-header py-3 cardHead">
-                            <h4 class="my-0 fw-normal">Pro</h4>
+                            <h4 class="my-0 fw-normal">Wind Behaviour</h4>
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>20 users included</li>
-                                <li>10 GB of storage</li>
-                                <li>Priority email support</li>
-                                <li>Help center access</li>
+                                <li>Wind Speed<span id="wind_speed"></span></li>
+                                <li>Wind Degree<span id="wind_degree"></span></li>
+                                <li>Humidity<span id="humidity"></span></li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                            <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card mb-4 rounded-3 shadow-sm border-primary">
                         <div class="card-header py-3 border-primary cardHead">
-                            <h4 class="my-0 fw-normal">Enterprise</h4>
+                            <h4 class="my-0 fw-normal">Sun Behaviour</h4>
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>30 users included</li>
-                                <li>15 GB of storage</li>
-                                <li>Phone and email support</li>
-                                <li>Help center access</li>
+                                <li>Sunset<span id="sunset"></span></li>
+                                <li>Sunrise<span id="sunrise"></span></li>
+                                <li> <br><span id=""></span></li>
                             </ul>
-                            <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                            <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
                         </div>
                     </div>
                 </div>
