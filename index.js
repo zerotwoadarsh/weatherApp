@@ -11,16 +11,16 @@ async function fetchData() {
     try {
         const response = await fetch(url, options);
         const data = await response.json();
-        cloud_pct.innerHTML = data.cloud_pct;
-        temp.innerHTML = data.temp;
-        feels_like.innerHTML = data.feels_like;
-        humidity.innerHTML = data.humidity;
-        min_temp.innerHTML = data.min_temp;
-        max_temp.innerHTML = data.max_temp;
-        wind_speed.innerHTML = data.wind_speed;
-        wind_degrees.innerHTML = data.wind_degrees;
-        sunrise.innerHTML = data.sunrise;
-        sunset.innerHTML = data.sunset;
+        document.getElementById("cloud_pct").innerHTML = data.cloud_pct;
+        document.getElementById("temp").innerHTML = data.temp;
+        document.getElementById("feels_like").innerHTML = data.feels_like;
+        document.getElementById("humidity").innerHTML = data.humidity;
+        document.getElementById("min_temp").innerHTML = data.min_temp;
+        document.getElementById("max_temp").innerHTML = data.max_temp;
+        document.getElementById("wind_speed").innerHTML = data.wind_speed;
+        document.getElementById("wind_degrees").innerHTML = data.wind_degrees;
+        document.getElementById("sunrise").innerHTML = data.sunrise;
+        document.getElementById("sunset").innerHTML = data.sunset;
         console.log(data);
     } catch (error) {
         console.error('Error fetching data:');
