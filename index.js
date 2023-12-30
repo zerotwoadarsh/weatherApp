@@ -1,5 +1,7 @@
+const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Seattle';
+const tableContent = document.querySelector(".tableContent");
+
 async function fetchData() {
-    const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Seattle';
     const options = {
         method: 'GET',
         headers: {
@@ -9,30 +11,58 @@ async function fetchData() {
     };
 
     try {
-        const response = await fetch(url, options);
-        const data = await response.json();
-        document.getElementById("cloud_pct").innerHTML = data.cloud_pct;
-        document.getElementById("temp").innerHTML = data.temp;
-        document.getElementById("feels_like").innerHTML = data.feels_like;
-        document.getElementById("humidity").innerHTML = data.humidity;
-        document.getElementById("min_temp").innerHTML = data.min_temp;
-        document.getElementById("max_temp").innerHTML = data.max_temp;
-        document.getElementById("wind_speed").innerHTML = data.wind_speed;
-        document.getElementById("wind_degrees").innerHTML = data.wind_degrees;
-        document.getElementById("sunrise").innerHTML = data.sunrise;
-        document.getElementById("sunset").innerHTML = data.sunset;
+        const res = await fetch(url, options);
+        const data = await res.json();
+        console.log(data);
+        content(data);
         console.log(data);
     } catch (error) {
-        console.error('Error fetching data:');
+        console.error('Error fetching data:', error);
     }
 }
 
+const heading = ["City", "Cloud_pct", "Temp", "Feels_like", "Humidity", "Min_temp", "Max_temp", "Wind_speed", "Wind_degrees", "Sunrise", "Sunset"];
+
+const contentH = (heading) => {
+    tableContent.innerHTML += heading.map((heading) => {
+        return `<th style="width:10%">${heading}</th>`;
+    }).join("");
+};
+
+const city = ["Bangalore", "Jhansi", "Rome", "Hong Kong", "Bangkok", "London", "Singapore"];
+
+const content2 = (city) => {
+    tableContent.innerHTML += city.map((city) => {
+        return `<tr><th scope="row" class="text-start">${city}</th></tr>`;
+    }).join("");
+};
+
+
+
+const content = (data) => {
+    // Create header row
+
+    // Create data rows
+    const dataRows = data.map((item) => {
+        return `<tr>
+                    <td>${item.city}</td>
+                    <td>${item.cloud_pct}</td>
+                    <td>${item.temp}</td>
+                    <td>${item.feels_like}</td>
+                    <td>${item.humidity}</td>
+                    <td>${item.min_temp}</td>
+                    <td>${item.max_temp}</td>
+                    <td>${item.wind_speed}</td>
+                    <td>${item.wind_degrees}</td>
+                    <td>${item.sunrise}</td>
+                    <td>${item.sunset}</td>
+                </tr>`;
+    }).join("");
+
+    // Set table content
+    tableContent.innerHTML +=  dataRows;
+};
+
 fetchData();
-
-
-const navSearch = document.getElementById('navSearch');
-const searchHere = document.getElementById('searchHere');
-
-navSearch.addEventListener('click', function(){
-    searchHere.click();
-})
+contentH(heading);
+content2(city);
