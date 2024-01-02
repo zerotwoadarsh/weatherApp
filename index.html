@@ -34,12 +34,12 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item navSearch" href=".searchHere">Somewhere else? Search</a></li>
+                        <li><a class="dropdown-item navSearch" href="#" id="searchDropdown">Somewhere else? Search</a></li>
                         </ul>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2 searchHere" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2 searchHere" type="search" placeholder="Search" aria-label="Search" id="searchInput">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
@@ -54,54 +54,10 @@
 
     <div class="container">
         <main>
-            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm">
-                        <div class="card-header py-3 cardHead">
-                            <h4 class="my-0 fw-normal">Temperature</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title"></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Temperature<span id="temp"></span></li>
-                                <li>Min Tem<span id="min_temp"></span></li>
-                                <li>Max Tem<span id="max_temp"></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm">
-                        <div class="card-header py-3 cardHead">
-                            <h4 class="my-0 fw-normal">Wind Behaviour</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title"></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Wind Speed<span id="wind_speed"></span></li>
-                                <li>Wind Degree<span id="wind_degree"></span></li>
-                                <li>Humidity<span id="humidity"></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 border-primary cardHead">
-                            <h4 class="my-0 fw-normal">Sun Behaviour</h4>
-                        </div>
-                        <div class="card-body">
-                            <h1 class="card-title pricing-card-title"></h1>
-                            <ul class="list-unstyled mt-3 mb-4">
-                                <li>Sunset<span id="sunset"></span></li>
-                                <li>Sunrise<span id="sunrise"></span></li>
-                                <li> <br><span id=""></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div id="dynamicCardContainer" class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <!-- The JavaScript code will append cards here -->
             </div>
-
+            
             <h2 class="display-6 text-center mb-4">Other major cities</h2>
 
             <div class="table-responsive">

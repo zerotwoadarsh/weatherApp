@@ -40,9 +40,6 @@ const content2 = (city) => {
 
 
 const content = (data) => {
-    // Create header row
-
-    // Create data rows
     const dataRows = data.map((item) => {
         return `<tr>
                     <td>${item.city}</td>
@@ -66,3 +63,47 @@ const content = (data) => {
 fetchData();
 contentH(heading);
 content2(city);
+
+
+const cardData = [
+    { title: "Temperature", content: "Card 1" },
+    { title: "Wind Behaviour", content: "Card 2" },
+    { title: "Sun Behaviour", content: "Card 3" }
+];
+
+function createCard(title, content) {
+    const card = document.createElement("div");
+    card.classList.add("col");
+    card.innerHTML = `
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3 cardHead">
+                <h4 class="my-0 fw-normal">${title}</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title"></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    ${content}
+                </ul>
+            </div>
+        </div>
+    `;
+    return card;
+}
+
+
+function renderCards() {
+    const container = document.getElementById("dynamicCardContainer");
+
+    cardData.forEach(({ title, content }) => {
+        const card = createCard(title, content);
+        container.appendChild(card);
+    });
+}
+renderCards();
+
+const searchDropdown = document.getElementById("searchDropdown");
+const searchInput = document.getElementById("searchInput");
+
+searchDropdown.addEventListener("click", function (event) {
+    searchInput.focus();
+});
